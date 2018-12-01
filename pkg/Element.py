@@ -1,6 +1,6 @@
-#definition of Element class
+#definition of Element class and methods
 class Element:
 
-    id 
-    def __init__(self, length):
-        self.length = length
+    def __init__(self, elementLength, elementID):
+        self.elementLength = elementLength
+        self.elementID = elementID
