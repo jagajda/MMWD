@@ -5,6 +5,7 @@ class Element:
         self.elementLength = elementLength
         self.elementID = elementID
         self.value = getValue(selfelementLength)
+        self.remainder = elementLength
 
     # returns price of the element, based on it's length
 
