@@ -4,4 +4,3 @@ def mutation (specimensList):
         mutationPoint = random.randint (0, numberOfElements - 1)
         specimensList [i] = specimensList [i] + random.randint (-5, 5)
     return specimensList
-
