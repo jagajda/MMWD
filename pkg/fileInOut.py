@@ -10,6 +10,11 @@ def readfile(filename):
             read.append(Element.Element(int(id), int(length)))
         return read
 
-test=readfile('sample.txt')
-print(test[0].elementID)
+def writetofile(filename, toWrite):
+    with open(filename,'w') as f:
+        for i in toWrite:
+            f.write('{};{}\n'.format(str(i.elementID), str(i.elementLength)))
 
+test=readfile('sample.txt')
+print(test[3].elementLength)
+writetofile('testWrite.txt',test)
