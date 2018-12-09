@@ -1,16 +1,14 @@
 # definition of Element class and methods
 class Element:
 
-    def __init__(self, elementLength, elementID):
+    def __init__(self, elementID, elementLength: int):
         self.elementLength = elementLength
         self.elementID = elementID
-        self.value = getValue(selfelementLength)
+        self.value = getValue(elementLength)
         self.remainder = elementLength
 
-    # returns price of the element, based on it's length
-
-
-def getValue(length):
+# returns price of the element, based on it's length
+def getValue(length: int):
     if length < 0:
         return None
     elif 0 <= length < 5:
