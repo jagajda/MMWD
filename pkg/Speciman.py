@@ -1,9 +1,9 @@
 from pkg import Element as Element
 """ definition of Speciman class and methods"""
 class Speciman:
-    def __init__(self, elementsList, specimanID):
-        self.elementsLts = elementsList
+    def __init__(self, specimanID, elementsList):
         self.specimanID = specimanID
+        self.elementsList = elementsList
 
 def targetfunction(Speciman):
     target = 0
