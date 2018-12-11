@@ -13,11 +13,11 @@ def readfile(filename):
 
 
 def writetofile(filename, toWrite):
-    with open(filename,'w') as f:
+    with open(filename, 'w') as f:
         for i in toWrite:
             f.write('{};{}\n'.format(str(i.elementID), str(i.elementLength)))
 
 
 test=readfile('sample.txt')
-print(test[3].elementLength)
+print(test[4].elementID)
 writetofile('testWrite.txt',test)

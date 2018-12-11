@@ -6,7 +6,7 @@ class Element:
     def __init__(self, elementID, elementLength: int):
         self.elementLength = elementLength
         self.elementID = elementID
-        self.value = getValue(elementLength)
+        self.value = getvalue(elementLength)
         self.remainder = elementLength
 
 
