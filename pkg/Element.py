@@ -1,4 +1,6 @@
 """definition of Element class and methods"""
+
+
 class Element:
 
     def __init__(self, elementID, elementLength: int):
@@ -6,6 +8,7 @@ class Element:
         self.elementID = elementID
         self.value = getValue(elementLength)
         self.remainder = elementLength
+
 
 # returns price of the element, based on it's length
 def getvalue(length: int):
@@ -21,4 +24,3 @@ def getvalue(length: int):
         return length * 2.25
     elif length > 20:
         return length * 2.5
-
