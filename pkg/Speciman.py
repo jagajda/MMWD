@@ -1,4 +1,5 @@
 from pkg import Element as Element
+import random
 """ definition of Speciman class and methods"""
 
 
@@ -16,3 +17,21 @@ def targetfunction(Speciman):
         else:
             target += Element.getvalue(i.remainder)
     return target
+
+
+def newspeciman(storagelist, orderlist):
+    templist = []
+    tempspeciman = orderlist[:]
+    tempstorage = storagelist[:]
+    for i in tempspeciman:
+        for j in tempstorage:
+            if i.elementLength <= j.remainder:
+                templist.append(j)
+            else:
+                pass
+            tempelement = random.choice(j)
+            i.source = tempelement.elementID
+            tempelement.remainder = tempelement.remainder - i.elementLength
+            templist.clear()
+            tempelement.delete()
+    return tempspeciman

@@ -3,11 +3,12 @@
 
 class Element:
 
-    def __init__(self, elementID, elementLength: int):
+    def __init__(self, elementID, elementLength, origin = 0):
         self.elementLength = elementLength
         self.elementID = elementID
         self.value = getvalue(elementLength)
         self.remainder = elementLength
+        self.origin = origin
 
 
 # returns price of the element, based on it's length
