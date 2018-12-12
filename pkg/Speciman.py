@@ -20,6 +20,7 @@ def targetfunction(Speciman):
 
 
 def newspeciman(storagelist, orderlist):
+    """Generates random elementsList"""
     templist = []
     tempspeciman = orderlist[:]
     tempstorage = storagelist[:]
@@ -29,9 +30,18 @@ def newspeciman(storagelist, orderlist):
                 templist.append(j)
             else:
                 pass
-            tempelement = random.choice(j)
+            tempelement = random.choice(templist)
             i.source = tempelement.elementID
             tempelement.remainder = tempelement.remainder - i.elementLength
             templist.clear()
             tempelement.delete()
     return tempspeciman
+
+
+def checkallocation(speciman):
+    """Check if any element of Speciman has no source"""
+    if any(speciman.elementsList.source == 0):
+        return True
+    else:
+        return False
+
