@@ -17,7 +17,7 @@ def targetfunction(Speciman, Storage):
         else:
             target += Element.getvalue(i.remainder)
     for i in Storage.elementsList:
-        target += i.getvalue (i.length)
+        target += i.getvalue (i.elementLength)
     return target
 
 
