@@ -44,4 +44,9 @@ def checkallocation(speciman):
         return True
     else:
         return False
+    
+def checkRemainder (self, Order):
+    """Evaluate remainder for every element in the solution"""
+    for i in range (len (self.elementsList)):
+        self.specimenList[i].remainder -= Order.orderElements[i].length
 
