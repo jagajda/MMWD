@@ -9,13 +9,15 @@ class Speciman:
         self.elementsList = elementsList
 
 
-def targetfunction(Speciman):
+def targetfunction(Speciman, Storage):
     target = 0
     for i in Speciman.elementsList:
         if i.remainder <= 1:
             target += 0
         else:
             target += Element.getvalue(i.remainder)
+    for i in Storage.elementsList:
+        target += i.getvalue (i.length)
     return target
 
 
