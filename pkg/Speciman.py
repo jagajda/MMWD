@@ -17,7 +17,7 @@ def targetfunction(Speciman, Storage):
         else:
             target += Element.getvalue(i.remainder)
     for i in Storage.elementsList:
-        target += i.getvalue (i.elementLength)
+        target += Element.getvalue(i.elementLength)
     return target
 
 
@@ -46,7 +46,8 @@ def checkallocation(speciman):
         return True
     else:
         return False
-    
+
+
 def checkRemainder (self, Order):
     """Evaluate remainder for every element in the solution"""
     for i in range (len (self.elementsList)):
