@@ -1,5 +1,4 @@
 from pkg import Element as Element
-import numpy as np
 import random
 """ definition of Speciman class and methods"""
 
@@ -91,7 +90,7 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     Population.specimenList.clear()
     for i in range (len (sortedDict)):
         Population.specimenList.append (sortedDict[i][0])
-    Population.bestFitVect = np.asarray(Population.specimenList[:3])
+    Population.bestFitVect = Population.specimenList[:3]
     elite = round (elitePercentage * populationSize / 100)
     mutation = round (mutationPercentage * populationSize / 100)
     crossover = round (crossoverPercentage * populationSize / 100)
