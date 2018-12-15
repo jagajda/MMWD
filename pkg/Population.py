@@ -15,3 +15,4 @@ def generatepopulation(numspecimen, storagelist, orderlist):
     for i in range (0,numspecimen):
         j = Speciman(i, Speciman.newspeciman(storagelist, orderlist))
         tmpspecimenlist.append(j)
+    return tmpspecimenlist
