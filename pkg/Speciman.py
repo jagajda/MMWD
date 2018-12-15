@@ -1,4 +1,5 @@
 from pkg import Element as Element
+import numpy as np
 import random
 """ definition of Speciman class and methods"""
 
@@ -9,7 +10,7 @@ class Speciman:
         self.intList = intList
 
 
-def targetfunction(Speciman, storageList):
+def targetFunction(Speciman, storageList):
     target = 0
     tempStorage = storageList[:]
 #    for i in Speciman.intList:
@@ -27,7 +28,7 @@ def targetfunction(Speciman, storageList):
     return target
 
 
-def newspeciman(storagelist, orderlist):
+def newSpeciman(storagelist, orderlist):
     """Generates random elementsList"""
     templist = []
     tempspeciman = orderlist[:]
@@ -90,11 +91,16 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     Population.specimenList.clear()
     for i in range (len (sortedDict)):
         Population.specimenList.append (sortedDict[i][0])
+    Population.bestFitVect = np.asarray(Population.specimenList[:3])
     elite = round (elitePercentage * populationSize / 100)
     mutation = round (mutationPercentage * populationSize / 100)
     crossover = round (crossoverPercentage * populationSize / 100)
     die = populationSize - elite - mutation - crossover
     del (Population.specimenList[:(die - 1)])
-    Population.specimenList[:(mutation - 1)] = mutation (Population.specimenList[:(mutation - 1)])
-    Population.specimenList[mutation :(crossover - 1)] = crossover (Population.specimenList[mutation :(crossover - 1)])
+    Population.specimenList[:(mutation - 1)] = mutation(Population.specimenList[:(mutation - 1)])
+    Population.specimenList[mutation:(crossover - 1)] = crossover(Population.specimenList[mutation :(crossover - 1)])
+    Population.numberOfSpecimen -= die
+    Population.deathNum = die
+    Population.mutationNum = mutation
+    Population.crossoverNum = crossover
     return Population
