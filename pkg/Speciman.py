@@ -4,20 +4,26 @@ import random
 
 
 class Speciman:
-    def __init__(self, specimanID, elementsList):
+    def __init__(self, specimanID, intList):
         self.specimanID = specimanID
-        self.elementsList = elementsList
+        self.intList = intList
 
 
-def targetfunction(Speciman, Storage):
+def targetfunction(Speciman, storageList):
     target = 0
-    for i in Speciman.elementsList:
+    tempStorage = storageList[:]
+#    for i in Speciman.intList:
+#       for j in storageList:
+#            if i == storageList[j].elementID:
+#                if storageList[j].remainder <= 1:
+#                    target += 0
+#                else:
+#                    target += storageList[j].getvalue(storageList[j].remainder)
+    for i in storageList.elementsList:
         if i.remainder <= 1:
             target += 0
         else:
-            target += Element.getvalue(i.remainder)
-    for i in Storage.elementsList:
-        target += Element.getvalue(i.elementLength)
+            target += i.getvalue(i.remainder)
     return target
 
 
@@ -42,8 +48,8 @@ def newspeciman(storagelist, orderlist):
 
 def checkallocation(speciman):
     """Check if any element of Speciman has no source"""
-    if any(speciman.elementsList.source == 0):
-        return True
+    if any(speciman.elementsList.source == -1):
+        return
     else:
         return False
 
