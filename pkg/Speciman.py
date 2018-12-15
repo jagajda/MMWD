@@ -59,3 +59,42 @@ def checkRemainder (self, Order):
     for i in range (len (self.elementsList)):
         self.specimenList[i].remainder -= Order.orderElements[i].length
 
+def checkRemainder (Speciman, storageList, orderList):
+    for i in range (len (Speciman.elementsList)):
+        for j in range (len (storageList)):
+            if Speciman.elementsList[i] == storageList[j].elementID:
+                storageList[j].remainder -= orderList[i].elementLength
+    return storageList
+
+def checkLimitations (storageList):
+    for i in range (len (storageList)):
+        if storageList[i].remainder < 0:
+            return False
+        else:
+            pass
+    return True
+
+def nextGeneration (Population, Storage, Order, populationSize, elitePercentage, mutationPercentage, crossoverPercentage):
+    specimenTargetsDict = {}
+    while Population.numberOfSpecimen <= populationSize:
+        Population.specimenList.append (newSpeciman (Storage.storageElements, Order.orderElements))
+        for i in range (len (Population.specimenList)):
+            storageListCopy = Storage.storageElements
+            storageListCopy = checkRemainder (Population.specimenList[i], storageListCopy, Order.orderElements)
+            if checkLimitations (storageListCopy) is False:
+                Population.specimenList[i] = newSpeciman (Storage.storageElements, Order.orderElements)
+            else:
+                Population.numberOfSpeciman += 1
+                specimenTargetsDict[Population.specimenList[i]] = targetFunction (Population.specimenList[i], storageListCopy)
+    sortedDict = sorted (specimenTargetsDict.items(), key = lambda k: k[1])
+    Population.specimenList.clear()
+    for i in range (len (sortedDict)):
+        Population.specimenList.append (sortedDict[i][0])
+    elite = round (elitePercentage * populationSize / 100)
+    mutation = round (mutationPercentage * populationSize / 100)
+    crossover = round (crossoverPercentage * populationSize / 100)
+    die = populationSize - elite - mutation - crossover
+    del (Population.specimenList[:(die - 1)])
+    Population.specimenList[:(mutation - 1)] = mutation (Population.specimenList[:(mutation - 1)])
+    Population.specimenList[mutation :(crossover - 1)] = crossover (Population.specimenList[mutation :(crossover - 1)])
+    return Population
