@@ -49,7 +49,7 @@ def newspeciman(storagelist, orderlist):
 def checkallocation(speciman):
     """Check if any element of Speciman has no source"""
     if any(speciman.elementsList.source == -1):
-        return
+        return True
     else:
         return False
 

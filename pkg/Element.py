@@ -3,7 +3,7 @@
 
 class Element:
 
-    def __init__(self, elementID, elementLength, source = 0):
+    def __init__(self, elementID, elementLength, source = -1):
         self.elementLength = elementLength
         self.elementID = elementID
         self.value = getvalue(elementLength)
