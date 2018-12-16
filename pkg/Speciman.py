@@ -1,4 +1,6 @@
 from pkg import Element as Element
+from pkg import mutation
+from pkg import crossover
 import random
 """ definition of Speciman class and methods"""
 
@@ -49,9 +51,9 @@ def newSpeciman(storagelist, orderlist):
 def checkallocation(speciman):
     """Check if any element of Speciman has no source"""
     if any(speciman.elementsList.source == -1):
-        return True
-    else:
         return False
+    else:
+        return True
 
 
 def checkRemainder (self, Order):
@@ -96,8 +98,8 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     crossover = round (crossoverPercentage * populationSize / 100)
     die = populationSize - elite - mutation - crossover
     del (Population.specimenList[:(die - 1)])
-    Population.specimenList[:(mutation - 1)] = mutation(Population.specimenList[:(mutation - 1)])
-    Population.specimenList[mutation:(crossover - 1)] = crossover(Population.specimenList[mutation :(crossover - 1)])
+    Population.specimenList[:(mutation - 1)] = mutation.mutation(Population.specimenList[:(mutation - 1)])
+    Population.specimenList[mutation:(crossover - 1)] = crossover.crossover(Population.specimenList[mutation :(crossover - 1)])
     Population.numberOfSpecimen -= die
     Population.deathNum = die
     Population.mutationNum = mutation

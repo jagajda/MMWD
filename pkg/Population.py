@@ -26,7 +26,16 @@ class Population:
     def plotStdDev(self):
         vec = [Element.getvalue(i) for i in self.specimenList]
         stddev = np.std(vec)
-        pyplot.plot(self.populationID, stddev,)
+        pyplot.plot(self.populationID, stddev)
+
+    def checkallocation(self):
+        for j in self.specimenList:
+            tmpList = [Speciman.checkallocation(j) for j in self.specimenList]
+            if any(k for k in tmpList) is True:
+                return False
+            else:
+                pass
+        return True
 
 
 def generatepopulation(numspecimen, storagelist, orderlist):
@@ -35,7 +44,6 @@ def generatepopulation(numspecimen, storagelist, orderlist):
         j = Speciman.Speciman(i, Speciman.newSpeciman(storagelist, orderlist))
         tmpspecimenlist.append(j)
     return tmpspecimenlist
-
 
 #testing pyplot
 x = [1, 2, 3]
