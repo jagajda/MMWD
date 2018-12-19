@@ -49,13 +49,13 @@ def generatepopulation(numspecimen, storagelist, orderlist):
     return tmpspecimenlist
 
 #testing pyplot
-pyplot.figure(1)
-x = [1, 2]
-y =  [1, 2]
-s = pyplot.plot(x, y)
-pyplot.show(s)
-pyplot.figure(2)
-x1 = [4, 4]
-y1 = [6, 4]
-s1 = pyplot.plot(x1, y1)
-pyplot.show(s1)
+#pyplot.figure(1)
+#x = [1, 2]
+#y =  [1, 2]
+#s = pyplot.plot(x, y)
+#pyplot.show(s)
+#pyplot.figure(2)
+#x1 = [4, 4]
+#y1 = [6, 4]
+#s1 = pyplot.plot(x1, y1)
+#pyplot.show(s1)

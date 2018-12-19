@@ -6,13 +6,13 @@ class Element:
     def __init__(self, elementID, elementLength, source = -1):
         self.elementLength = elementLength
         self.elementID = elementID
-        self.value = getvalue(elementLength)
+        self.value = getValue(elementLength)
         self.remainder = elementLength
         self.source = source
 
 
-# returns price of the element, based on it's length
-def getvalue(length: int):
+def getValue(length):
+    """Calculates element's value basing on it's length"""
     if length < 0:
         return None
     elif 0 <= length < 5:
