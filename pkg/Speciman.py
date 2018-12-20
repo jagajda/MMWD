@@ -114,12 +114,12 @@ def getValue(length):
         return length * 2.5
 
 
-#def checkallocation(speciman):
-#    """Check if any element of Speciman has no source"""
-#    if any(speciman.elementsList.source == -1):
-#        return False
-#    else:
-#        return True
+# def checkallocation(speciman):
+#     """Check if any element of Speciman has no source"""
+#     if any(speciman.elementsList.source == -1):
+#         return False
+#     else:
+#         return True
 
 
 #def checkRemainder (self, Order):
