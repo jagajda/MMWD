@@ -1,4 +1,4 @@
-def crossover (crossoverList):
+def crossover (crossoverList, crossType):
     numberOfElements = length (crossoverList[0])
     mothers = []
     fathers = []
@@ -8,7 +8,12 @@ def crossover (crossoverList):
         if crossoverList [i] not in mothers:
             fathers.append (crossoverList [i])
     for i in range (len (mothers)):
-        crossPoint = random.randint (0, numberOfElements - 1)
+        if crossType == 0:
+            crossPoint = random.randint (numberOfElements/2 - 1, numberOfElements/2 + 1)
+        elif crossType == 1:
+            crossPoint = random.randint (numberOfElements/2 - 2, numberOfElements/2 + 2)
+        elif crossType == 2:
+            crossPoint = random.randint (0, numberOfElements - 1)
         child1 = mothers [i][:crossPoint] + fathers [i][crossPoint+1:]
         child2 = fathers [i][:crossPoint] + mothers [i][crossPoint+1:]
         children.append (child1)
