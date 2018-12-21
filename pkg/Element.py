@@ -13,9 +13,9 @@ class Element:
 
 def getValue(length):
     """Calculates element's value basing on it's length"""
-    if length < 0:
-        return None
-    elif 0 <= length < 5:
+    if length <= 0:
+        return 0
+    elif 0 < length < 5:
         return length * 1.5
     elif 5 < length < 10:
         return length * 1.75

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e3063ea0-ec65-4e30-80da-31f4944e90fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/Element.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/Element.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/Population.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/Population.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/Speciman.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/Speciman.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/Population.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="195">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -29,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
+            <state relative-caret-position="133">
+              <caret line="154" column="14" selection-start-line="154" selection-start-column="14" selection-end-line="154" selection-end-column="14" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -50,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/Element.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="131">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -59,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="9" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="113">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#82#0" expanded="true" />
               </folding>
@@ -99,18 +100,18 @@
         <option value="$PROJECT_DIR$/pkg/fileInOut.py" />
         <option value="$PROJECT_DIR$/pkg/mutation.py" />
         <option value="$PROJECT_DIR$/pkg/plot_example.py" />
-        <option value="$PROJECT_DIR$/pkg/Population.py" />
-        <option value="$PROJECT_DIR$/pkg/Element.py" />
         <option value="$PROJECT_DIR$/pkg/main.py" />
+        <option value="$PROJECT_DIR$/pkg/Element.py" />
+        <option value="$PROJECT_DIR$/pkg/Population.py" />
         <option value="$PROJECT_DIR$/pkg/Speciman.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="36" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="40" />
     <option name="y" value="37" />
-    <option name="width" value="1256" />
-    <option name="height" value="683" />
+    <option name="width" value="1246" />
+    <option name="height" value="682" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -320,13 +321,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1374" height="736" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.30454546" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.31363636" />
       <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.27575758" />
       <window_info id="Favorites" order="2" sideWeight="0.50165564" side_tool="true" weight="0.27575758" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294702" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34933776" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34933776" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39900663" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -384,8 +386,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pkg/Speciman.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="5" />
+          <line>159</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -424,10 +426,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/Population.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/Element.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="131">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -438,27 +457,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/Population.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
+        <state relative-caret-position="133">
+          <caret line="154" column="14" selection-start-line="154" selection-start-column="14" selection-end-line="154" selection-end-column="14" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>

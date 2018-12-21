@@ -8,7 +8,7 @@ import random
 class Speciman:
     def __init__(self, specimanID, intList):
         self.specimanID = specimanID
-        self.intList = intList
+        self.intList = intList[:]
 
 
 def targetFunction(Speciman, storageList):
@@ -147,16 +147,17 @@ def checkLimitations (storageList):
 
 def nextGeneration (Population, Storage, Order, populationSize, elitePercentage, mutationPercentage, crossoverPercentage):
     specimenTargetsDict = {}
+    cnt = 0
     while Population.numberOfSpecimen <= populationSize:
-        Population.specimenList.append(newSpeciman (Storage, Order))
-        for i in range (len (Population.specimenList)):
+        Population.specimenList.append(Speciman(++cnt, newSpeciman(Storage, Order)))
+        for m in Population.specimenList:
             storageListCopy = Storage.storageElements[:]
-            storageListCopy = checkRemainder (Population.specimenList[i].intList, storageListCopy, Order.orderElements)
+            storageListCopy = checkRemainder (m.intList, storageListCopy, Order.orderElements)
             if checkLimitations (storageListCopy) is False:
-                Population.specimenList[i] = newSpeciman (Storage, Order)
+                m = newSpeciman (Storage, Order)
             else:
                 Population.numberOfSpecimen += 1
-                specimenTargetsDict[Population.specimenList[i]] = targetFunction (Population.specimenList[i], storageListCopy)
+                specimenTargetsDict[m] = targetFunction (m, storageListCopy)
     sortedDict = sorted (specimenTargetsDict.items(), key = lambda k: k[1])
     Population.specimenList.clear()
     for i in range (len (sortedDict)):
