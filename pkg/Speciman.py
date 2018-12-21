@@ -1,6 +1,6 @@
 from pkg import Element as Element
-from pkg import mutation
-from pkg import crossover, Storage, Order
+from pkg import Mutation
+from pkg import Crossover, Storage, Order
 import random
 """ definition of Speciman class and methods"""
 
@@ -157,7 +157,12 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
                 m = newSpeciman (Storage, Order)
             else:
                 Population.numberOfSpecimen += 1
-                specimenTargetsDict[m] = targetFunction (m, storageListCopy)
+    #pyplot.figure(1)
+    #pyplot.show(avgPlot)
+    #pyplot.figure(2)
+    #pyplot.show(stdPlot)
+    #pyplot.figure(3)
+    #pyplot.show(targetPlot)                specimenTargetsDict[m] = targetFunction (m, storageListCopy)
     sortedDict = sorted (specimenTargetsDict.items(), key = lambda k: k[1])
     Population.specimenList.clear()
     for i in range (len (sortedDict)):
@@ -170,8 +175,8 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     mutType = random.randint (0,2)
     crossType = random.randint (0,2)
     del (Population.specimenList[:(die - 1)])
-    Population.specimenList[:(mutation - 1)] = mutation.mutation(Population.specimenList[:(mutation - 1)], mutType)
-    Population.specimenList[mutation:(crossover - 1)] = crossover.crossover(Population.specimenList[mutation :(crossover - 1)], crossType)
+    Population.specimenList[:(mutation - 1)] = Mutation.mutation(Population.specimenList[:(mutation - 1)], mutType)
+    Population.specimenList[mutation:(crossover - 1)] = Crossover.crossover(Population.specimenList[mutation :(crossover - 1)], crossType)
     Population.numberOfSpecimen -= die
     Population.deathNum = die
     Population.mutationNum = mutation
