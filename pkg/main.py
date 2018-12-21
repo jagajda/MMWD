@@ -9,7 +9,7 @@ def main():
     specimanCount = 20
     populationList = []
     populationList.insert(0, Population.Population(0, Population.generatepopulation(specimanCount, myStorage, myOrder), specimanCount))
-    print(populationList[0].specimenList[1].intList)
+    print(populationList[0].specimenList[3].intList)
     #avgPlot = populationList[0].plotAverage()
     #stdPlot = populationList[0].plotStdDev()
     #targetPlot = populationList[0].plotTarget()
