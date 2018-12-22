@@ -1,7 +1,7 @@
 from pkg import Element as Element
 from pkg import Mutation
 from pkg import Crossover, Storage, Order
-import random
+import random, copy
 """ definition of Speciman class and methods"""
 
 
@@ -18,7 +18,8 @@ def targetFunction(Speciman, storageList):
        if i.remainder <= 1:
            target += 0
        else:
-           target += getValue(i.remainder)
+           add = getValue(i.remainder)
+           target += add
    return target
 
 
@@ -100,18 +101,20 @@ def newSpeciman(storage, order):
 
 def getValue(length):
     """Calculates element's value basing on it's length"""
+    value = 0
     if length <= 0:
-        return 0
-    elif 0 < length < 5:
-        return length * 1.5
-    elif 5 < length < 10:
-        return length * 1.75
-    elif 10 < length < 15:
-        return length * 2
-    elif 15 < length < 20:
-        return length * 2.25
+        value = 0
+    elif 0 < length <= 5:
+        value = length * 1.5
+    elif 5 < length <= 10:
+        value = length * 1.75
+    elif 10 < length <= 15:
+        value = length * 2
+    elif 15 < length <= 20:
+        value = length * 2.25
     elif length > 20:
-        return length * 2.5
+        value = length * 2.5
+    return value
 
 
 # def checkallocation(speciman):
@@ -147,22 +150,34 @@ def checkLimitations (storageList):
 
 def nextGeneration (Population, Storage, Order, populationSize, elitePercentage, mutationPercentage, crossoverPercentage):
     specimenTargetsDict = {}
-    cnt = 0
-    while Population.numberOfSpecimen <= populationSize:
-        Population.specimenList.append(Speciman(++cnt, newSpeciman(Storage, Order)))
-        for m in Population.specimenList:
-            storageListCopy = Storage.storageElements[:]
-            storageListCopy = checkRemainder (m.intList, storageListCopy, Order.orderElements)
-            if checkLimitations (storageListCopy) is False:
-                m = newSpeciman (Storage, Order)
-            else:
-                Population.numberOfSpecimen += 1
+    #cnt = 0
+    newIntList = []
+    for m in Population.specimenList:
+        storageListCopy = copy.deepcopy(Storage.storageElements)
+        storageListCopy = checkRemainder(m.intList, storageListCopy, Order.orderElements)
+        if checkLimitations(storageListCopy) is False:
+            pass
+        else:
+            newIntList.append (m)
+            specimenTargetsDict[m] = targetFunction(m, storageListCopy)
+    Population.specimenList = copy.deepcopy (newIntList)
+    Population.numberOfSpecimen = len (Population.specimenList)
+    while Population.numberOfSpecimen < populationSize:
+        Population.numberOfSpecimen += 1
+        newTempSpecimen = Speciman(Population.numberOfSpecimen, newSpeciman(Storage, Order))
+        storageListCopy = copy.deepcopy(Storage.storageElements)
+        storageListCopy = checkRemainder (newTempSpecimen.intList, storageListCopy, Order.orderElements)
+        if checkLimitations (storageListCopy) is False:
+            Population.numberOfSpecimen -= 1
+        else:
+            Population.specimenList.append (newTempSpecimen)
+            specimenTargetsDict[newTempSpecimen] = targetFunction(m, storageListCopy)
     #pyplot.figure(1)
     #pyplot.show(avgPlot)
     #pyplot.figure(2)
     #pyplot.show(stdPlot)
     #pyplot.figure(3)
-    #pyplot.show(targetPlot)                specimenTargetsDict[m] = targetFunction (m, storageListCopy)
+    #pyplot.show(targetPlot)
     sortedDict = sorted (specimenTargetsDict.items(), key = lambda k: k[1])
     Population.specimenList.clear()
     for i in range (len (sortedDict)):
@@ -174,11 +189,13 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     die = populationSize - elite - mutation - crossover
     mutType = random.randint (0,2)
     crossType = random.randint (0,2)
-    del (Population.specimenList[:(die - 1)])
-    Population.specimenList[:(mutation - 1)] = Mutation.mutation(Population.specimenList[:(mutation - 1)], mutType)
+    if die != 0:
+        del (Population.specimenList[:(die - 1)])
+    Population.specimenList[:mutation] = Mutation.mutation(Population.specimenList[:mutation], mutType)
     Population.specimenList[mutation:(crossover - 1)] = Crossover.crossover(Population.specimenList[mutation :(crossover - 1)], crossType)
     Population.numberOfSpecimen -= die
     Population.deathNum = die
     Population.mutationNum = mutation
     Population.crossoverNum = crossover
     return Population
+
