@@ -172,12 +172,6 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
         else:
             Population.specimenList.append (newTempSpecimen)
             specimenTargetsDict[newTempSpecimen] = targetFunction(m, storageListCopy)
-    #pyplot.figure(1)
-    #pyplot.show(avgPlot)
-    #pyplot.figure(2)
-    #pyplot.show(stdPlot)
-    #pyplot.figure(3)
-    #pyplot.show(targetPlot)
     sortedDict = sorted (specimenTargetsDict.items(), key = lambda k: k[1])
     Population.specimenList.clear()
     for i in range (len (sortedDict)):

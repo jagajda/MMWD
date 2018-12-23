@@ -1,9 +1,11 @@
+import random
 def crossover (crossoverList, crossType):
-    numberOfElements = length (crossoverList[0])
+    #numberOfElements = len(crossoverList)
+    numberOfElements = 10
     mothers = []
     fathers = []
     children = []
-    mothers = random.sample (crossoverList, len (crossoverList / 2))
+    mothers = random.sample (crossoverList, len(crossoverList)//2)
     for i in range (len (crossoverList)):
         if crossoverList [i] not in mothers:
             fathers.append (crossoverList [i])

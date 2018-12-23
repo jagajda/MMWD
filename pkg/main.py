@@ -14,11 +14,11 @@ def main():
     #stdPlot = populationList[0].plotStdDev()
     #targetPlot = populationList[0].plotTarget()
     for i in range(1, populationCount):
-        populationList.insert(Speciman.nextGeneration(populationList[i-1], myStorage, myOrder, specimanCount, 30, 30, 40))
+        populationList.insert(i, Speciman.nextGeneration(populationList[i-1], myStorage, myOrder, specimanCount, 30, 30, 40))
         #avgPlot = populationList[i].Population.Population.plotAverage()
         #stdPlot = populationList[i].Population.Population.plotStdDev()
         #targetPlot = populationList[i].Population.Population.plotTarget()
-        print(populationList[i].mutationNum)
+        print(populationList[i].specimenList[i].intList)
 
 if __name__ == '__main__':
     main()
