@@ -19,14 +19,14 @@ class Population:
         obj = pyplot.plot(self.populationID, self.bestFitVect[0], self.populationID, self.bestFitVect[1], self.populationID, self.bestFitVect[2])
         return obj
 
-    def plotAverage(self):
-        vec = [Element.getvalue(i) for i in self.specimenList]
+    def plotAverage(self, storageList):
+        vec = [Speciman.targetFunction(i, storageList) for i in self.specimenList]
         avg = np.average(vec)
         obj = pyplot.plot(self.populationID, avg)
         return obj
 
-    def plotStdDev(self):
-        vec = [Element.getvalue(i) for i in self.specimenList]
+    def plotStdDev(self, storageList):
+        vec = [Speciman.targetFunction(i, storageList) for i in self.specimenList]
         stddev = np.std(vec)
         obj = pyplot.plot(self.populationID, stddev)
         return obj
