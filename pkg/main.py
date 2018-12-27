@@ -1,5 +1,5 @@
 from pkg import Element, fileInOut, Mutation, Order, Population, Speciman, Storage
-import os, random
+import os, random, copy
 import matplotlib.pyplot as pyplot
 
 def main():
@@ -9,7 +9,7 @@ def main():
     specimanCount = 20
     populationList = []
     populationList.insert(0, Population.Population(0, Population.generatepopulation(specimanCount, myStorage, myOrder), specimanCount))
-    print(populationList[0].specimenList[3].intList)
+    # print(populationList[0].specimenList[3].intList)
     # avgPlot = populationList[0].plotAverage(myStorage.storageElements)
     # avgObj = pyplot.plot(avgPlot, 'b')
     # stdPlot = populationList[0].plotStdDev(myStorage.storageElements)
@@ -17,7 +17,9 @@ def main():
     # targetPlot = populationList[0].plotTarget()
     # tarObj = pyplot.plot(targetPlot, 'r')
     for i in range(1, populationCount):
-        populationList.insert(i, Speciman.nextGeneration(populationList[i-1], myStorage, myOrder, specimanCount, 30, 30, 40))
+        newPopulation = copy.deepcopy(populationList[i-1])
+        newPopulation.populationID = i
+        populationList.insert(i, Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40))
         # avgPlot = populationList[i].plotAverage(myStorage.storageElements)
         # avgObj = pyplot.plot(avgPlot, 'b')
         # stdPlot = populationList[i].plotStdDev(myStorage.storageElements)
@@ -25,7 +27,8 @@ def main():
         # targetPlot = populationList[i].plotTarget()
         # tarObj = pyplot.plot(targetPlot, 'r')
         print(populationList[i].specimenList[i].intList)
-        print(populationList[i].printPopulation(myStorage.storageElements))
+    for j in populationList:
+        print(j.printPopulation(myStorage.storageElements))
     # pyplot.figure(1)
     # pyplot.show(avgObj)
     # pyplot.figure(2)
