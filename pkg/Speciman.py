@@ -10,6 +10,9 @@ class Speciman:
         self.specimanID = specimanID
         self.intList = intList[:]
 
+    def printTarget(self, storageList):
+        return (str(targetFunction(self, storageList)))
+
 
 def targetFunction(Speciman, storageList):
    target = 0
