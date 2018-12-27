@@ -16,19 +16,19 @@ class Population:
         self.bestFitVect = bestFitVect[:]
 
     def plotTarget(self):
-        obj = pyplot.plot(self.populationID, self.bestFitVect[0], self.populationID, self.bestFitVect[1], self.populationID, self.bestFitVect[2])
+        obj = [self.populationID, self.bestFitVect[0], self.populationID, self.bestFitVect[1], self.populationID, self.bestFitVect[2]]
         return obj
 
     def plotAverage(self, storageList):
         vec = [Speciman.targetFunction(i, storageList) for i in self.specimenList]
         avg = np.average(vec)
-        obj = pyplot.plot(self.populationID, avg)
+        obj = [self.populationID, avg]
         return obj
 
     def plotStdDev(self, storageList):
         vec = [Speciman.targetFunction(i, storageList) for i in self.specimenList]
         stddev = np.std(vec)
-        obj = pyplot.plot(self.populationID, stddev)
+        obj = [self.populationID, stddev]
         return obj
 
     def checkallocation(self):
