@@ -24,6 +24,9 @@ class Population:
             tmp += ' target:'
             tmp += i.printTarget(storageList, orderList)
             tmp += '#\n'
+        tmp += 'Best solutions found: '
+        tmp += str(self.bestFitVect[:])
+        tmp += '\n'
         return tmp
 
     def plotTarget(self):

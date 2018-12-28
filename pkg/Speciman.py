@@ -180,7 +180,9 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     Population.specimenList.clear()
     for i in range (len (sortedDict)):
         Population.specimenList.append (sortedDict[i][0])
-    Population.bestFitVect = [targetFunction(Population.specimenList[i], Storage.storageElements) for i in range(0,3)]
+    tmpList = [getTarget(a, Storage.storageElements, Order.orderElements) for a in Population.specimenList]
+    sortedList = sorted(tmpList, key= float, reverse= True)
+    Population.bestFitVect = copy.deepcopy(sortedList[:3])
     elite = round (elitePercentage * populationSize / 100)
     mutation = round (mutationPercentage * populationSize / 100)
     crossover = round (crossoverPercentage * populationSize / 100)
