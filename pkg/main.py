@@ -6,11 +6,14 @@ import numpy as np
 def main():
     myStorage = Storage.Storage(fileInOut.readfile('storageSample.txt'))
     myOrder = Order.Order(fileInOut.readfile('orderSample.txt'))
-    populationCount = 10
+    populationCount = 30
     specimanCount = 20
     populationList = []
     avgList = []
     stdList = []
+    tarList0 = []
+    tarList1 = []
+    tarList2 = []
     populationList.insert(0, Population.Population(0, Population.generatepopulation(specimanCount, myStorage, myOrder), specimanCount))
     avgList.append(populationList[0].getAverage(myStorage.storageElements, myOrder.orderElements))
     stdList.append(populationList[0].getStdDev(myStorage.storageElements, myOrder.orderElements))
@@ -20,9 +23,9 @@ def main():
         populationList.insert(i, Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40))
         avgList.append(populationList[i].getAverage(myStorage.storageElements, myOrder.orderElements))
         stdList.append(populationList[i].getStdDev(myStorage.storageElements, myOrder.orderElements))
-        # targetPlot = populationList[i].plotTarget()
-        # tarObj = pyplot.plot(targetPlot, 'r')
-        print(populationList[i].specimenList[i].intList)
+        tarList0.append(populationList[i].getTarget()[0])
+        tarList1.append(populationList[i].getTarget()[1])
+        tarList2.append(populationList[i].getTarget()[2])
     for j in populationList:
         print(j.printPopulation(myStorage.storageElements, myOrder.orderElements))
     pyplot.figure(1)
@@ -34,13 +37,19 @@ def main():
     pyplot.xticks(np.arange(0, len(x1), 1))
     pyplot.show()
     pyplot.figure(2)
-    # pyplot.cla()
     x2 = [i.populationID for i in populationList]
     y2 = stdList
-    obj2 = pyplot.plot(x2, y2, label='Przebieg wartosci odchylenia standardowego')
+    pyplot.plot(x2, y2, label='Przebieg wartosci odchylenia standardowego')
     pyplot.xlabel('ID populacji')
     pyplot.ylabel('Odchylenie standardowe')
     pyplot.xticks(np.arange(0, len(x2), 1))
+    pyplot.show()
+    pyplot.figure(3)
+    x3 = range(1, len(populationList))
+    pyplot.plot(x3, tarList0, 'r', x3, tarList1, 'g', x3, tarList2, 'b', label='Przebieg wartosci funkcji przystosowania najlepszych dopuszczalnych osobnikow')
+    pyplot.xlabel('ID populacji')
+    pyplot.ylabel('Wartos funkcji celu')
+    pyplot.xticks(np.arange(1, len(x3), 1))
     pyplot.show()
     # pyplot.figure(3)
     # pyplot.show(tarObj)

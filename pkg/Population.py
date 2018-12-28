@@ -24,13 +24,13 @@ class Population:
             tmp += ' # solution:'
             tmp += i.printTarget(storageList, orderList)
             tmp += '#\n'
-        tmp += 'Best solutions found: '
+        tmp += 'Best acceptable solutions found: '
         tmp += str(self.bestFitVect[:3])
         tmp += '\n'
         return tmp
 
-    def plotTarget(self):
-        obj = [self.populationID, self.bestFitVect[0], self.populationID, self.bestFitVect[1], self.populationID, self.bestFitVect[2]]
+    def getTarget(self):
+        obj = [self.bestFitVect[0], self.bestFitVect[1], self.bestFitVect[2]]
         return obj
 
     def getAverage(self, storageList, orderList):
