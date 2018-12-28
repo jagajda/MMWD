@@ -181,7 +181,7 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     for i in range (len (sortedDict)):
         Population.specimenList.append (sortedDict[i][0])
     tmpList = [getTarget(a, Storage.storageElements, Order.orderElements) for a in Population.specimenList]
-    sortedList = sorted(tmpList, key= float, reverse= True)
+    sortedList = sorted(tmpList, key=float, reverse=True)
     Population.bestFitVect = copy.deepcopy(sortedList[:3])
     elite = round (elitePercentage * populationSize / 100)
     mutation = round (mutationPercentage * populationSize / 100)
@@ -191,7 +191,7 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     crossType = random.randint (0,2)
     if die != 0:
         del (Population.specimenList[:(die - 1)])
-    Population.specimenList[:mutation] = Mutation.mutation(Population.specimenList[:mutation], mutType)
+    Population.specimenList[:mutation] = Mutation.mutation(Population.specimenList[:mutation], mutType, Storage)
     Population.specimenList[mutation:(crossover - 1)] = Crossover.crossover(Population.specimenList[mutation :(crossover - 1)], crossType)
     Population.numberOfSpecimen -= die
     Population.deathNum = die
