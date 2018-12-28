@@ -16,12 +16,12 @@ class Population:
         self.bestFitVect = bestFitVect[:]
 
     def printPopulation(self, storageList, orderList):
-        tmp = 'Population ID: %s\n' % (str(self.populationID))
+        tmp = 'Population ID:%2s\n' % (str(self.populationID))
         tmp += 'Number of Specimen: %s\n' %(str(self.numberOfSpecimen))
         for i in self.specimenList:
             tmp += 'ID:'
             tmp += str(i.specimanID)
-            tmp += ' target:'
+            tmp += ' # solution:'
             tmp += i.printTarget(storageList, orderList)
             tmp += '#\n'
         tmp += 'Best solutions found: '
@@ -61,15 +61,3 @@ def generatepopulation(numspecimen, storagelist, orderlist):
         j = Speciman.Speciman(i, Speciman.newSpeciman(storagelist, orderlist))
         tmpspecimenlist.append(j)
     return tmpspecimenlist
-
-#testing pyplot
-#pyplot.figure(1)
-#x = [1, 2]
-#y =  [1, 2]
-#s = pyplot.plot(x, y)
-#pyplot.show(s)
-#pyplot.figure(2)
-#x1 = [4, 4]
-#y1 = [6, 4]
-#s1 = pyplot.plot(x1, y1)
-#pyplot.show(s1)
