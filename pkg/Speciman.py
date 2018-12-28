@@ -12,12 +12,12 @@ class Speciman:
 
     def printTarget(self, storageList, orderList):
         tmp = ''
-        for j in storageList:
-            for k in self.intList:
-                if k == j.elementID:
+        for j in self.intList:
+            for k in storageList:
+                if j == k.elementID:
                     for l in orderList:
-                        if k == l.elementID:
-                            tmp += str(l.elementLength) + 'm/' + str(j.elementLength) + 'm '
+                        if self.intList.index(j) == l.elementID:
+                            tmp += str(l.elementLength) + 'm/' + str(k.elementLength) + 'm '
                         else:
                             pass
                     else:
@@ -182,12 +182,8 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     Population.specimenList = copy.deepcopy (newIntList)
     Population.numberOfSpecimen = len (Population.specimenList)
     while Population.numberOfSpecimen < populationSize:
-        new = newSpeciman(Storage, Order)
-        if new == False:
-            return False
-        else:
-            Population.numberOfSpecimen += 1
-        newTempSpecimen = Speciman(Population.numberOfSpecimen, new)
+        Population.numberOfSpecimen += 1
+        newTempSpecimen = Speciman(Population.numberOfSpecimen, newSpeciman(Storage, Order))
         storageListCopy = copy.deepcopy(Storage.storageElements)
         storageListCopy = checkRemainder (newTempSpecimen.intList, storageListCopy, Order.orderElements)
         if checkLimitations (storageListCopy) is False:
