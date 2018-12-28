@@ -25,7 +25,7 @@ class Population:
             tmp += i.printTarget(storageList, orderList)
             tmp += '#\n'
         tmp += 'Best solutions found: '
-        tmp += str(self.bestFitVect[:])
+        tmp += str(self.bestFitVect[:3])
         tmp += '\n'
         return tmp
 
