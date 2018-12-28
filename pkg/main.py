@@ -28,7 +28,7 @@ def main():
         # tarObj = pyplot.plot(targetPlot, 'r')
         print(populationList[i].specimenList[i].intList)
     for j in populationList:
-        print(j.printPopulation(myStorage.storageElements))
+        print(j.printPopulation(myStorage.storageElements, myOrder.orderElements))
     # pyplot.figure(1)
     # pyplot.show(avgObj)
     # pyplot.figure(2)

@@ -15,14 +15,14 @@ class Population:
         self.deathNum = deathNum
         self.bestFitVect = bestFitVect[:]
 
-    def printPopulation(self, storageList):
+    def printPopulation(self, storageList, orderList):
         tmp = 'Population ID: %s\n' % (str(self.populationID))
         tmp += 'Number of Specimen: %s\n' %(str(self.numberOfSpecimen))
         for i in self.specimenList:
             tmp += 'ID:'
             tmp += str(i.specimanID)
             tmp += ' target:'
-            tmp += i.printTarget(storageList)
+            tmp += i.printTarget(storageList, orderList)
             tmp += '#\n'
         return tmp
 

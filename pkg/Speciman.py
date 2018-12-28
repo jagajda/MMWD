@@ -10,8 +10,8 @@ class Speciman:
         self.specimanID = specimanID
         self.intList = intList[:]
 
-    def printTarget(self, storageList):
-        return (str(targetFunction(self, storageList)))
+    def printTarget(self, storageList, orderList):
+        return (str(getTarget(self, storageList, orderList)))
 
 
 def targetFunction(Speciman, storageList):
@@ -83,23 +83,24 @@ def newSpeciman(storage, order):
     return tempIntList
 
 
-# def targetFunction(speciman, order, storage):
-#     """Calculates targetFunction for Speciman, basing on Speciman's intList, oderElements, storageElements """
-#     tempStorage = storage.storageElements[:]
-#     tempOrder = order.orderElements[:]
-#     tempIntList = Speciman.intList[:]
-#     target = 0
-#     for i in tempStorage:
-#         for j in tempIntList:
-#             if j == i.elementID:
-#                 i.remainder -= tempOrder[tempIntList.index(j)].elementLength
-#             else:
-#                 pass
-#         for k in tempStorage:
-#             if k.remainder <= 1:
-#                 target += 0
-#             else:
-#                 target += getValue(k.remainder)
+def getTarget(speciman, order, storage):
+    """Calculates targetFunction for Speciman, basing on Speciman's intList, oderElements, storageElements """
+    tempStorage = copy.deepcopy(storage)
+    tempOrder = copy.deepcopy(order)
+    tempIntList = copy.deepcopy(speciman.intList)
+    target = 0
+    for i in tempStorage:
+        for j in tempIntList:
+            if j == i.elementID:
+                i.remainder -= tempOrder[tempIntList.index(j)].elementLength
+            else:
+                pass
+    for k in tempStorage:
+        if k.remainder <= 1:
+            target += 0
+        else:
+            target += getValue(k.remainder)
+    return target
 
 
 def getValue(length):
