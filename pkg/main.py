@@ -10,26 +10,31 @@ def main():
     specimanCount = 20
     populationList = []
     avgList = []
-    stdList = []
+    medList = []
     tarList0 = []
     tarList1 = []
     tarList2 = []
+    dictList = []
+    tmpString = ''
     populationList.insert(0, Population.Population(0, Population.generatepopulation(specimanCount, myStorage, myOrder), specimanCount))
-    avgList.append(populationList[0].getAverage(myStorage.storageElements, myOrder.orderElements))
-    stdList.append(populationList[0].getStdDev(myStorage.storageElements, myOrder.orderElements))
+    # avgList.append(populationList[0].getAverage(myStorage.storageElements, myOrder.orderElements))
+    # stdList.append(populationList[0].getStdDev(myStorage.storageElements, myOrder.orderElements))
     for i in range(1, populationCount):
         newPopulation = copy.deepcopy(populationList[i-1])
         newPopulation.populationID = i
-        populationList.insert(i, Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40))
-        avgList.append(populationList[i].getAverage(myStorage.storageElements, myOrder.orderElements))
-        stdList.append(populationList[i].getStdDev(myStorage.storageElements, myOrder.orderElements))
+        populationList.insert(i, Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40)[0])
+        a = Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40)[1]
+        dictList.append(a)
+        tmpList = [i[1] for i in a]
+        avgList.append(np.average(tmpList))
+        medList.append(np.median(tmpList))
         tarList0.append(populationList[i].getTarget()[0])
         tarList1.append(populationList[i].getTarget()[1])
         tarList2.append(populationList[i].getTarget()[2])
     for j in populationList:
         print(j.printPopulation(myStorage.storageElements, myOrder.orderElements))
     pyplot.figure(1)
-    x1 = [i.populationID for i in populationList]
+    x1 = range(1, len(populationList))
     y1 = avgList
     pyplot.plot(x1, y1, label='Przebieg sredniej wartosci funkcji celu')
     pyplot.xlabel('ID populacji')
@@ -37,8 +42,8 @@ def main():
     pyplot.xticks(np.arange(0, len(x1), 1))
     pyplot.show()
     pyplot.figure(2)
-    x2 = [i.populationID for i in populationList]
-    y2 = stdList
+    x2 = range(1, len(populationList))
+    y2 = medList
     pyplot.plot(x2, y2, label='Przebieg wartosci odchylenia standardowego')
     pyplot.xlabel('ID populacji')
     pyplot.ylabel('Odchylenie standardowe')
