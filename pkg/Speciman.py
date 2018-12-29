@@ -213,7 +213,7 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     if die != 0:
         del (Population.specimenList[:(die - 1)])
     Population.specimenList[:mutation] = Mutation.mutation(Population.specimenList[:mutation], mutType, Storage)
-    Population.specimenList[mutation:(crossover - 1)] = Crossover.crossover(Population.specimenList[mutation :(crossover - 1)], crossType)
+    Population.specimenList[mutation:(mutation + crossover)] = Crossover.crossover(Population.specimenList[mutation :(mutation + crossover)], crossType)
     Population.numberOfSpecimen -= die
     Population.deathNum = die
     Population.mutationNum = mutation
