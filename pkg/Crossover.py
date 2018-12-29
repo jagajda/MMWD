@@ -1,4 +1,5 @@
 import random
+import Speciman
 def crossover (crossoverList, crossType):
     #numberOfElements = len(crossoverList)
     numberOfElements = 10
@@ -16,8 +17,10 @@ def crossover (crossoverList, crossType):
             crossPoint = random.randint (numberOfElements/2 - 2, numberOfElements/2 + 2)
         elif crossType == 2:
             crossPoint = random.randint (0, numberOfElements - 1)
-        child1 = mothers [i][:crossPoint] + fathers [i][crossPoint+1:]
-        child2 = fathers [i][:crossPoint] + mothers [i][crossPoint+1:]
+        child1 = mothers [i].intList[:crossPoint] + fathers [i].intList[crossPoint:]
+        child2 = fathers [i].intList[:crossPoint] + mothers [i].intList[crossPoint:]
+        child1 = Speciman.Speciman (mothers[i].specimanID, child1)
+        child2 = Speciman.Speciman (fathers[i].specimanID, child2)
         children.append (child1)
         children.append (child2)
     return children
