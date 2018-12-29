@@ -9,8 +9,8 @@ def main():
     populationCount = 30
     specimanCount = 20
     populationList = []
-    avgList = []
     medList = []
+    stdList = []
     tarList0 = []
     tarList1 = []
     tarList2 = []
@@ -26,8 +26,8 @@ def main():
         a = Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40)[1]
         dictList.append(a)
         tmpList = [i[1] for i in a]
-        avgList.append(np.average(tmpList))
         medList.append(np.median(tmpList))
+        stdList.append(np.std(tmpList))
         tarList0.append(populationList[i].getTarget()[0])
         tarList1.append(populationList[i].getTarget()[1])
         tarList2.append(populationList[i].getTarget()[2])
@@ -35,15 +35,15 @@ def main():
         print(j.printPopulation(myStorage.storageElements, myOrder.orderElements))
     pyplot.figure(1)
     x1 = range(1, len(populationList))
-    y1 = avgList
-    pyplot.plot(x1, y1, label='Przebieg sredniej wartosci funkcji celu')
+    y1 = medList
+    pyplot.plot(x1, y1, label='Przebieg mediany wartosci funkcji celu')
     pyplot.xlabel('ID populacji')
-    pyplot.ylabel('Srednia wartosc funckji celu')
+    pyplot.ylabel('Mediana wartosc funckji celu')
     pyplot.xticks(np.arange(0, len(x1), 1))
     pyplot.show()
     pyplot.figure(2)
     x2 = range(1, len(populationList))
-    y2 = medList
+    y2 = stdList
     pyplot.plot(x2, y2, label='Przebieg wartosci odchylenia standardowego')
     pyplot.xlabel('ID populacji')
     pyplot.ylabel('Odchylenie standardowe')
