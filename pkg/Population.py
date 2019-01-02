@@ -23,10 +23,11 @@ class Population:
             tmp += str(i.specimanID)
             tmp += ' # solution:'
             tmp += i.printTarget(storageList, orderList)
-            tmp += '#\n'
-        tmp += 'Best acceptable solutions found: '
-        tmp += str(self.bestFitVect[:3])
-        tmp += '\n'
+            tmp += '# '
+            tmp += 'target: '
+        # tmp += 'Best acceptable solutions found: '
+        # tmp += str(self.bestFitVect[:3])
+        # tmp += '\n'
         return tmp
 
     def getTarget(self):

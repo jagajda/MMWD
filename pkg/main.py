@@ -1,5 +1,5 @@
 from pkg import Element, fileInOut, Mutation, Order, Population, Speciman, Storage
-import os, random, copy
+import os, random, copy, datetime
 import matplotlib.pyplot as pyplot
 import numpy as np
 
@@ -16,6 +16,7 @@ def main():
     tarList2 = []
     dictList = []
     tmpString = ''
+    fileName = str(datetime.datetime.now()) + '.txt'
     populationList.insert(0, Population.Population(0, Population.generatepopulation(specimanCount, myStorage, myOrder), specimanCount))
     # avgList.append(populationList[0].getAverage(myStorage.storageElements, myOrder.orderElements))
     # stdList.append(populationList[0].getStdDev(myStorage.storageElements, myOrder.orderElements))
@@ -31,8 +32,25 @@ def main():
         tarList0.append(populationList[i].getTarget()[0])
         tarList1.append(populationList[i].getTarget()[1])
         tarList2.append(populationList[i].getTarget()[2])
-    for j in populationList:
-        print(j.printPopulation(myStorage.storageElements, myOrder.orderElements))
+    for j in dictList:
+        tmpString += 'Population ID: '
+        tmpString += str(dictList.index(j))
+        tmpString += '\n'
+        for i in j:
+            tmpString += 'Speciman ID:'
+            tmpString += str(i[0].specimanID)
+            tmpString += ' Solution: '
+            tmpString += str(i[0].printTarget(myStorage.storageElements, myOrder.orderElements))
+            tmpString += 'intList:'
+            tmpString += str(i[0].intList)
+            tmpString += ' Target:'
+            tmpString += str(i[1])
+            tmpString += '\n'
+        tmpString += '\n'
+        print(tmpString)
+    with open(fileName, 'w') as f:
+        for i in tmpString:
+            f.write(i)
     pyplot.figure(1)
     x1 = range(1, len(populationList))
     y1 = medList

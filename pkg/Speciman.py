@@ -24,8 +24,8 @@ class Speciman:
                         pass
                 else:
                     pass
-        tmp += '# target: '
-        tmp += (str(getTarget(self, storageList, orderList)) + ' # intList: ' + str(self.intList))
+        # tmp += '# target: '
+        # tmp += (str(getTarget(self, storageList, orderList)) + ' # intList: ' + str(self.intList))
         return tmp
 
 
