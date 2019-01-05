@@ -32,6 +32,8 @@ def main():
         tarList0.append(populationList[i].getTarget()[0])
         tarList1.append(populationList[i].getTarget()[1])
         tarList2.append(populationList[i].getTarget()[2])
+    for i in populationList:
+        i.countAvg()
     for j in dictList:
         tmpString += 'Population ID: '
         tmpString += str(dictList.index(j))
@@ -74,8 +76,14 @@ def main():
     pyplot.ylabel('Wartos funkcji celu')
     pyplot.xticks(np.arange(1, len(x3), 1))
     pyplot.show()
-    # pyplot.figure(3)
-    # pyplot.show(tarObj)
+    pyplot.figure(4)
+    x4 = range(0, len(populationList))
+    y4 = [i.avgLife for i in populationList]
+    pyplot.plot(x4, y4, label='Srednia dlugosc zycia osobnikow w populacji')
+    pyplot.xlabel('ID populacji')
+    pyplot.ylabel('Sredni wiek osobnikow')
+    pyplot.xticks(np.arange(0, len(x4), 1))
+    pyplot.show()
 
 if __name__ == '__main__':
     main()

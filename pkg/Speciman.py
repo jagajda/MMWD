@@ -6,9 +6,10 @@ import random, copy
 
 
 class Speciman:
-    def __init__(self, specimanID, intList):
+    def __init__(self, specimanID, intList, timeAlive= 0):
         self.specimanID = specimanID
         self.intList = intList[:]
+        self.timeAlive = 0
 
     def printTarget(self, storageList, orderList):
         tmp = ''
@@ -215,5 +216,7 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     Population.deathNum = die
     Population.mutationNum = mutation
     Population.crossoverNum = crossover
+    for i in Population.specimenList:
+        i.timeAlive += 1
     print ("\n\n\n")
     return [Population, sortedDict]

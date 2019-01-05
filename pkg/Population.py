@@ -6,7 +6,7 @@ import numpy as np
 
 class Population:
     def __init__(self, populationID, specimenList, numberOfSpecimen, crossoverNum = 0, mutationNum = 0, deathNum = 0,
-                 bestFitVect = []):
+                 bestFitVect = [], avgLife= 0):
         self.populationID = populationID
         self.specimenList = specimenList[:]
         self.numberOfSpecimen = numberOfSpecimen
@@ -14,6 +14,8 @@ class Population:
         self.mutationNum = mutationNum
         self.deathNum = deathNum
         self.bestFitVect = bestFitVect[:]
+        self.avgLife = avgLife
+
 
     def printPopulation(self, storageList, orderList):
         tmp = 'Population ID:%2s\n' % (str(self.populationID))
@@ -52,6 +54,13 @@ class Population:
             else:
                 pass
         return True
+
+    def countAvg(self):
+        tmp = 0
+        for i in self.specimenList:
+            tmp += i.timeAlive
+        avg = tmp/len(self.specimenList)
+        self.avgLife = avg
 
 
 def generatepopulation(numspecimen, storagelist, orderlist):
