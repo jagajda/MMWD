@@ -6,7 +6,7 @@ import numpy as np
 
 class Population:
     def __init__(self, populationID, specimenList, numberOfSpecimen, crossoverNum = 0, mutationNum = 0, deathNum = 0,
-                 bestFitVect = [], avgLife= 0):
+                 bestFitVect = [], avgLife= 0, mutationTypeCount = [0,0,0], crossTypeCount = [0,0,0]):
         self.populationID = populationID
         self.specimenList = specimenList[:]
         self.numberOfSpecimen = numberOfSpecimen
@@ -15,6 +15,8 @@ class Population:
         self.deathNum = deathNum
         self.bestFitVect = bestFitVect[:]
         self.avgLife = avgLife
+        self.mutationTypeCount = mutationTypeCount[:]
+        self.crossTypeCount = crossTypeCount[:]
 
 
     def printPopulation(self, storageList, orderList):

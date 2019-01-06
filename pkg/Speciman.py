@@ -207,7 +207,9 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     crossover = round (crossoverPercentage * populationSize / 100)
     die = populationSize - elite - mutation - crossover
     mutType = random.randint (0,2)
+    Population.mutationTypeCount[mutType] += 1
     crossType = random.randint (0,2)
+    Population.crossTypeCount[crossType] += 1
     if die != 0:
         del (Population.specimenList[:(die - 1)])
     Population.specimenList[:mutation] = Mutation.mutation(Population.specimenList[:mutation], mutType, Storage)

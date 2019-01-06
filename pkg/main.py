@@ -49,7 +49,16 @@ def main():
             tmpString += str(i[1])
             tmpString += '\n'
         tmpString += '\n'
-        print(tmpString)
+        # print(tmpString)
+    tmpString += 'Łącznie wykonano mutacji:\n'
+    tmpString += 'Typ: 1 # ' + str(populationList[-1].mutationTypeCount[0]) + '\n'
+    tmpString += 'Typ: 2 # ' + str(populationList[-1].mutationTypeCount[1]) + '\n'
+    tmpString += 'Typ: 3 # ' + str(populationList[-1].mutationTypeCount[2]) + '\n'
+    tmpString += 'Łącznie dokonano krzyzowan:\n'
+    tmpString += 'Typ: 1 # ' + str(populationList[-1].crossTypeCount[0]) + '\n'
+    tmpString += 'Typ: 2 # ' + str(populationList[-1].crossTypeCount[1]) + '\n'
+    tmpString += 'Typ: 3 # ' + str(populationList[-1].crossTypeCount[2]) + '\n'
+    print(tmpString)
     with open(fileName, 'w') as f:
         for i in tmpString:
             f.write(i)
