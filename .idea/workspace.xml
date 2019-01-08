@@ -4,8 +4,9 @@
     <list default="true" id="e3063ea0-ec65-4e30-80da-31f4944e90fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/Speciman.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/Speciman.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/fileInOut.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/fileInOut.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/testWrite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/testWrite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/orderSample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/orderSample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/storageSample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/storageSample.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,12 +18,12 @@
     <favorites_list name="MMWD" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+            <state relative-caret-position="52">
+              <caret line="29" column="87" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
               <folding>
                 <element signature="e#0#82#0" expanded="true" />
               </folding>
@@ -31,19 +32,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/fileInOut.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state relative-caret-position="357">
+              <caret line="220" selection-start-line="220" selection-end-line="220" selection-end-column="30" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -98,16 +90,16 @@
         <option value="$PROJECT_DIR$/pkg/Crossover.py" />
         <option value="$PROJECT_DIR$/pkg/Mutation.py" />
         <option value="$PROJECT_DIR$/pkg/Population.py" />
-        <option value="$PROJECT_DIR$/pkg/main.py" />
         <option value="$PROJECT_DIR$/pkg/fileInOut.py" />
         <option value="$PROJECT_DIR$/pkg/Speciman.py" />
+        <option value="$PROJECT_DIR$/pkg/main.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="24" />
-    <option name="width" value="852" />
-    <option name="height" value="479" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="28" />
+    <option name="width" value="842" />
+    <option name="height" value="478" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -317,16 +309,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1374" height="736" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1366" height="732" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.3530303" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.3590909" />
       <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.27575758" />
       <window_info id="Favorites" order="2" sideWeight="0.50165564" side_tool="true" weight="0.27575758" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294702" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848485" weight="0.6539735" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39900663" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39900663" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -343,6 +334,8 @@
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_DETAILS" value="true" />
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
     <option name="COLUMN_ORDER">
       <list>
         <option value="0" />
@@ -449,22 +442,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/main.py">
+    <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="357">
+          <caret line="220" selection-start-line="220" selection-end-line="220" selection-end-column="30" />
           <folding>
-            <element signature="e#0#82#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
+    <entry file="file://$PROJECT_DIR$/pkg/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        <state relative-caret-position="52">
+          <caret line="29" column="87" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#0#82#0" expanded="true" />
           </folding>
         </state>
       </provider>

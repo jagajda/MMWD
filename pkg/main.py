@@ -23,6 +23,9 @@ def main():
     for i in range(1, populationCount):
         newPopulation = copy.deepcopy(populationList[i-1])
         newPopulation.populationID = i
+        newPopulation.mutationNum = 0
+        newPopulation.crossoverNum = 0
+        newPopulation.deathNum = 0
         populationList.insert(i, Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40)[0])
         a = Speciman.nextGeneration(newPopulation, myStorage, myOrder, specimanCount, 30, 30, 40)[1]
         dictList.append(a)
@@ -50,11 +53,11 @@ def main():
             tmpString += '\n'
         tmpString += '\n'
         # print(tmpString)
-    tmpString += 'Łącznie wykonano mutacji:\n'
+    tmpString += 'Łącznie wykonano poprawnych operacji mutacji:\n'
     tmpString += 'Typ: 1 # ' + str(populationList[-1].mutationTypeCount[0]) + '\n'
     tmpString += 'Typ: 2 # ' + str(populationList[-1].mutationTypeCount[1]) + '\n'
     tmpString += 'Typ: 3 # ' + str(populationList[-1].mutationTypeCount[2]) + '\n'
-    tmpString += 'Łącznie dokonano krzyzowan:\n'
+    tmpString += 'Łącznie dokonano poprawnych operacji krzyzowan:\n'
     tmpString += 'Typ: 1 # ' + str(populationList[-1].crossTypeCount[0]) + '\n'
     tmpString += 'Typ: 2 # ' + str(populationList[-1].crossTypeCount[1]) + '\n'
     tmpString += 'Typ: 3 # ' + str(populationList[-1].crossTypeCount[2]) + '\n'
@@ -93,6 +96,16 @@ def main():
     pyplot.ylabel('Sredni wiek osobnikow')
     pyplot.xticks(np.arange(0, len(x4), 1))
     pyplot.show()
+    pyplot.figure(5)
+    x5 = range(0, len(populationList))
+    y51 = [i.crossoverNum for i in populationList]
+    y52 = [i.mutationNum for i in populationList]
+    y53 = [i.deathNum for i in populationList]
+    pyplot.plot(x5, y51, 'ro', x5, y52, 'bo', x5, y53, 'go', label='Liczba dokonanych operacji w populacji')
+    pyplot.xlabel('ID populacji')
+    pyplot.ylabel('Liczba wykonanych operacji')
+    pyplot.show()
+
 
 if __name__ == '__main__':
     main()

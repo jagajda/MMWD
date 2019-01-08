@@ -25,11 +25,13 @@ class Speciman:
         #         else:
         #             pass
         # return tmp
-        for i,j in zip(self.intList, orderList):
+        for i, j in zip(self.intList, orderList):
             for k in storageList:
                 if i == k.elementID:
                     tmp += str(j.elementLength) + 'm/' + str(k.elementLength) + 'm '
         return tmp
+
+
 def targetFunction(Speciman, storageList):
    target = 0
    # tempStorage = checkRemainder(Speciman, storageList)
@@ -212,12 +214,13 @@ def nextGeneration (Population, Storage, Order, populationSize, elitePercentage,
     Population.crossTypeCount[crossType] += 1
     if die != 0:
         del (Population.specimenList[:(die - 1)])
+        Population.deathNum += 1
     Population.specimenList[:mutation] = Mutation.mutation(Population.specimenList[:mutation], mutType, Storage)
     Population.specimenList[mutation:(mutation + crossover)] = Crossover.crossover(Population.specimenList[mutation :(mutation + crossover)], crossType)
     Population.numberOfSpecimen -= die
-    Population.deathNum = die
-    Population.mutationNum = mutation
-    Population.crossoverNum = crossover
+    Population.deathNum += die
+    Population.mutationNum += mutation
+    Population.crossoverNum += crossover
     for i in Population.specimenList:
         i.timeAlive += 1
     print ("\n\n\n")
