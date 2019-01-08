@@ -8,7 +8,7 @@ def readfile(filename):
         read = []
         for line in f:
             id, length = (line.split(";"))
-            read.append(Element.Element(int(id), int(length)))
+            read.append(Element.Element(int(id), float(length)))
         return read
 
 

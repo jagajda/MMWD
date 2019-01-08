@@ -13,23 +13,23 @@ class Speciman:
 
     def printTarget(self, storageList, orderList):
         tmp = ''
-        for j in self.intList:
+        # for i in orderList:
+        #     for j in self.intList:
+        #         if self.intList.index(j) == i.elementID:
+        #             for l in storageList:
+        #                 if j == l.elementID:
+        #                     tmp += str(i.elementLength) + 'm/' + str(l.elementLength) + 'm '
+        #                 else:
+        #                     pass
+        #             pass
+        #         else:
+        #             pass
+        # return tmp
+        for i,j in zip(self.intList, orderList):
             for k in storageList:
-                if j == k.elementID:
-                    for l in orderList:
-                        if self.intList.index(j) == l.elementID:
-                            tmp += str(l.elementLength) + 'm/' + str(k.elementLength) + 'm '
-                        else:
-                            pass
-                    else:
-                        pass
-                else:
-                    pass
-        # tmp += '# target: '
-        # tmp += (str(getTarget(self, storageList, orderList)) + ' # intList: ' + str(self.intList))
+                if i == k.elementID:
+                    tmp += str(j.elementLength) + 'm/' + str(k.elementLength) + 'm '
         return tmp
-
-
 def targetFunction(Speciman, storageList):
    target = 0
    # tempStorage = checkRemainder(Speciman, storageList)

@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e3063ea0-ec65-4e30-80da-31f4944e90fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/Population.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/Population.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/Speciman.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/Speciman.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/fileInOut.py" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/fileInOut.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/testWrite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/testWrite.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,10 +18,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="15">
               <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               <folding>
                 <element signature="e#0#82#0" expanded="true" />
@@ -31,10 +31,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/fileInOut.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3135">
-              <caret line="209" column="46" selection-start-line="209" selection-start-column="46" selection-end-line="209" selection-end-column="46" />
+            <state relative-caret-position="112">
+              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -83,22 +92,22 @@
         <option value="$PROJECT_DIR$/pkg/file.py" />
         <option value="$PROJECT_DIR$/pkg/Storage.py" />
         <option value="$PROJECT_DIR$/pkg/Order.py" />
-        <option value="$PROJECT_DIR$/pkg/fileInOut.py" />
         <option value="$PROJECT_DIR$/pkg/mutation.py" />
         <option value="$PROJECT_DIR$/pkg/plot_example.py" />
         <option value="$PROJECT_DIR$/pkg/Element.py" />
         <option value="$PROJECT_DIR$/pkg/Crossover.py" />
         <option value="$PROJECT_DIR$/pkg/Mutation.py" />
-        <option value="$PROJECT_DIR$/pkg/Speciman.py" />
         <option value="$PROJECT_DIR$/pkg/Population.py" />
         <option value="$PROJECT_DIR$/pkg/main.py" />
+        <option value="$PROJECT_DIR$/pkg/fileInOut.py" />
+        <option value="$PROJECT_DIR$/pkg/Speciman.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="16" />
-    <option name="width" value="872" />
-    <option name="height" value="481" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="24" />
+    <option name="width" value="852" />
+    <option name="height" value="479" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -106,22 +115,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MMWD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MMWD" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MMWD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MMWD" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -138,10 +131,27 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MMWD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MMWD" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MMWD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MMWD" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/bin" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -307,22 +317,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="732" extended-state="6" />
+    <frame x="-4" y="0" width="1374" height="736" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.34166667" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.3530303" />
       <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.27575758" />
       <window_info id="Favorites" order="2" sideWeight="0.50165564" side_tool="true" weight="0.27575758" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294702" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.3807947" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39900663" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848485" weight="0.6539735" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39900663" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294702" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007576" side_tool="true" weight="0.3807947" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3294702" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50151515" side_tool="true" weight="0.3807947" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3294702" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -417,13 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/fileInOut.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/Element.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -432,13 +435,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/2019-01-02 16:53:07.276505.txt" />
-    <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
+    <entry file="file://$PROJECT_DIR$/pkg/fileInOut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3135">
-          <caret line="209" column="46" selection-start-line="209" selection-start-column="46" selection-end-line="209" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -451,10 +451,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="15">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding>
             <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/Speciman.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
